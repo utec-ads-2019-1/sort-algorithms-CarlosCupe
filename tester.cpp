@@ -1,5 +1,12 @@
 #include "tester.h"
 
+void integersBubble(void *elements, int first, int second) {
+    int *array = (int*) elements;
+    if (array[first] > array[second]) {
+        swap(array[first], array[second]);
+    }
+}
+
 Sort* Tester::getSort(Algorithm sort, void *array, size_t size) {
     switch (sort) {
         case bubblesort: return new BubbleSort(array, size);

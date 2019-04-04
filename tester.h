@@ -31,6 +31,8 @@ using namespace std;
 enum Algorithm { bubblesort, selectsort, insertsort, shellsort, quicksort, mergesort };
 typedef void (*fptr)(void*, int, int);
 
+typedef void (*fptr)(void*, int, int);
+
 class Tester {
     private:
         static Sort* getSort(Algorithm, void *, size_t);
