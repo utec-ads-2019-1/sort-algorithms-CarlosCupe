@@ -9,6 +9,9 @@ class InsertSort : public Sort {
 
         void execute(void (*compare)(void*, int, int)) {
             // TODO
+            for (int i = 0; i < size - 1; ++i) {
+                        compare(elements, i, i + 1);
+            }
         }
 
         inline string name() { return "InsertSort"; }

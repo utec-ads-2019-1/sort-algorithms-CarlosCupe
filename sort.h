@@ -2,6 +2,7 @@
 #define SORT_H
 
 #include <algorithm>
+#include <string>
 
 using namespace std;
 

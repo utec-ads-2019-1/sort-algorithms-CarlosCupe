@@ -9,6 +9,11 @@ class SelectSort : public Sort {
 
         void execute(void (*compare)(void*, int, int)) {
             // TODO
+            for (int i = 0; i < size - 1; i++) {
+                for (int j = i + 1; j < size; j++) {
+                    compare(elements, i, j);
+                }
+            }
         }
 
         inline string name() { return "SelectSort"; }

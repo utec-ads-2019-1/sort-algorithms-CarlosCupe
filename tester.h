@@ -29,13 +29,15 @@ using namespace std;
 #endif
 
 enum Algorithm { bubblesort, selectsort, insertsort, shellsort, quicksort, mergesort };
+typedef void (*fptr)(void*, int, int);
 
 class Tester {
     private:
         static Sort* getSort(Algorithm, void *, size_t);
+        static fptr getCompare(Algorithm);
 
     public:
-        static void integerSorts(int *, size_t, void (*)(void*, int, int));
+        static void integerSorts(int *, size_t);
 };
 
 #endif
