@@ -127,7 +127,7 @@ void Tester::integerSorts(int *array, size_t size) {
     fptr compare;
     int temp[size];
 
-    Algorithm algorithm[] = { bubblesort, selectsort, insertsort};
+    Algorithm algorithm[] = { bubblesort, selectsort, insertsort, quicksort};
     size_t numberOfAlgorithms = sizeof(algorithm) / sizeof(algorithm[0]);
 
     for (int i = 0; i < numberOfAlgorithms; i++) {
