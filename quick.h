@@ -9,6 +9,10 @@ class QuickSort : public Sort {
 
         void execute(void (*compare)(void*, int, int)) {
             // TODO
+            int pivot = (int)(size / 2);
+
+            compare(elements, 0, size);
+
         }
 
         inline string name() { return "QuickSort"; }
