@@ -86,50 +86,10 @@ void integerQuick(void *elements, int first, int second)
     } 
 } 
 
-void merge(int *array, int start, int mid, int end) {
-	int temp[end - start + 1];
-	int i = start, j = mid+1, k = 0;
 
-	while(i <= mid && j <= end) {
-		if(array[i] <= array[j]) {
-			temp[k] = array[i];
-			k++;
-            i++;
-		}
-		else {
-			temp[k] = array[j];
-			k++; j++;
-		}
-	}
-
-	while(i <= mid) {
-		temp[k] = array[i];
-		k++; 
-        i++;
-	}
-
-	while(j <= end) {
-		temp[k] = array[j];
-		k++;
-        j++;
-	}
-
-	for(i = start; i <= end; i++) {
-        array[i] = temp[i - start];
-    }
-}
 
 void integerMerge(void *elements, int first, int second) 
 { 
-    int *array = (int*) elements;
-    
-    if(first < second) {
-        int mid = (first + second) / 2;
-        integerMerge(array, first, mid);
-        integerMerge(array, mid+1, second);
-        merge(array, first, mid, second);
-	}
-
 } 
 
 fptr Tester::getCompare(Algorithm sort) {
@@ -149,7 +109,7 @@ void Tester::integerSorts(int *array, size_t size) {
     fptr compare;
     int temp[size];
 
-    Algorithm algorithm[] = { bubblesort, selectsort, insertsort, shellsort, quicksort, mergesort};
+    Algorithm algorithm[] = { bubblesort, selectsort, insertsort, shellsort, quicksort};
     size_t numberOfAlgorithms = sizeof(algorithm) / sizeof(algorithm[0]);
 
     for (int i = 0; i < numberOfAlgorithms; i++) {
