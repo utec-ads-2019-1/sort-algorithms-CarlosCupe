@@ -11,7 +11,7 @@ class QuickSort : public Sort {
             // TODO
             int pivot = (int)(size / 2);
 
-            compare(elements, 0, size);
+            compare(elements, 0, size - 1);
 
         }
 

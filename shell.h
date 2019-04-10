@@ -12,13 +12,10 @@ class ShellSort : public Sort {
 
         void execute(void (*compare)(void*, int, int)) {
             // TODO
-            int aumento = size / 2;
-            while (aumento > 0) {
-                for (int i = 0; i < size - aumento; i++) {
-                    compare(elements, i, i + aumento);
-                }
-                aumento = (int)(aumento / 2);
-            }
+            for (int pivot = size/2; pivot > 0; pivot /= 2) 
+            { 
+                compare(elements, pivot, size);
+            } 
         }
 
         inline string name() { return "ShellSort"; }
