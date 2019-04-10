@@ -93,25 +93,28 @@ void merge(int *array, int start, int mid, int end) {
 	while(i <= mid && j <= end) {
 		if(array[i] <= array[j]) {
 			temp[k] = array[i];
-			k += 1; i += 1;
+			k++;
+            i++;
 		}
 		else {
 			temp[k] = array[j];
-			k += 1; j += 1;
+			k++; j++;
 		}
 	}
 
 	while(i <= mid) {
 		temp[k] = array[i];
-		k += 1; i += 1;
+		k++; 
+        i++;
 	}
 
 	while(j <= end) {
 		temp[k] = array[j];
-		k += 1; j += 1;
+		k++;
+        j++;
 	}
 
-	for(i = start; i <= end; i += 1) {
+	for(i = start; i <= end; i++) {
         array[i] = temp[i - start];
     }
 }
